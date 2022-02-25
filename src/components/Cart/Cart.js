@@ -5,20 +5,20 @@ import {useSelector} from "react-redux";
 
 const Cart = () => {
 
-  const itemQuantity = useSelector(state => state.cartItem.number)
-
+  const cartItems = useSelector(state => state.cartItem.items);
   return (
     <Card className={classes.cart}>
       <h2>Your Shopping Cart</h2>
       <ul>
-        <CartItem
+        {cartItems.map((item) => (<CartItem
+          key={item.id}
           item={{
-            title: 'Test Item',
-            quantity: itemQuantity,
-            total: itemQuantity * 6,
-            price: 6
-          }}
-        />
+            id:item.id,
+            title: item.name,
+            quantity: item.quantity,
+            total: item.totalPrice,
+            price: item.price
+          }}/>))}
       </ul>
     </Card>
   );

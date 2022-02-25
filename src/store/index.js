@@ -1,6 +1,6 @@
 import {configureStore} from '@reduxjs/toolkit';
 import cartToggleSlice from "./cartToggle";
-import cartItemSlice from "./cartItem";
+import cartItemSlice from "./cartItemSlice";
 
 const redux = require('redux');
 

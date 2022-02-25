@@ -6,12 +6,10 @@ import {useSelector} from "react-redux";
 function App() {
 
   const toggleCart = useSelector(state => state.cartToggle.toggleCart);
-  const showCart = useSelector(state => state.cartItem.showCart)
 
   return (
     <Layout>
-      {toggleCart && showCart && <Cart/>}
-      {/* eslint-disable-next-line react/jsx-key */}
+      {toggleCart && <Cart/>}
       <Products/>
     </Layout>
   );
